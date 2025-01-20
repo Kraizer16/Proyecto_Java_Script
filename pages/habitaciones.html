@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/landingPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body id="b">
+    <header class="relative bg-white shadow-xl ring-1 ring-gray-900/5 z-50 w-full">
+        <nav class="px-4 py-4 sm:flex sm:items-center sm:justify-between">
+            <section class="flex justify-between">
+                <a href="../index.html">
+                    <img src="../img/landing/logo.png" class="h-20" alt="" />
+                </a>
+                <!-- Botón del menú -->
+                <button id="menu-button" class="text-gray-700 sm:hidden focus:outline-none">
+                    <!-- Ícono de tres barras -->
+                    <svg id="hamburger-icon" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 50 50">
+                        <path
+                            d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z">
+                        </path>
+                    </svg>
+                    <!-- Ícono de X -->
+                    <svg id="close-icon" class="w-6 h-6 fill-current hidden" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </section>
+            <div class="flex flex-col hidden items-start mt-3 gap-2 opacity-0 transition-all duration-1000 ease-in-out sm:flex-row sm:opacity-100 sm:block sm:max-h-full"
+                id="menu">
+                <a href="../index.html"
+                    class="text-gray-600 hover:bg-gray-200 px-2 py-2 rounded hover:text-gray-900">Home</a>
+                <a href="../pages/habitaciones.html"
+                    class="text-gray-600 hover:bg-gray-200 px-2 py-2 rounded hover:text-gray-900">Habitaciones</a>
+                <a href="../pages/contactanos.html"
+                    class="text-gray-600 hover:bg-gray-200 px-2 py-2 rounded hover:text-gray-900">Nosotros</a>
+                <button id="btn-iniciar"
+                    class="text-gray-600 bg-green-300 hover:bg-green-600 px-2 py-2 rounded hover:text-gray-900">Iniciar
+                    Sesión</button>
+                <button id="btn-cerrar"
+                    class="hidden text-gray-600 bg-red-300 hover:bg-red-600 px-2 py-2 rounded hover:text-gray-900">Cerrar
+                    Sesión</button>
+        </nav>
+    </header>
+
+    <div class="bg-gray-100 md:px-10 px-4 py-12 font-[sans-serif] bg-gradient-to-b from-gray-100 to-red-50">
+        <div class="max-w-5xl max-lg:max-w-3xl max-sm:max-w-sm mx-auto">
+
+            <form id="form-reserva" class="space-y-4">
+                <div id="date-range-picker" date-rangepicker
+                    class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 justify-center">
+                    <div class="relative w-full md:w-auto">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-4.05 2.05a3 3 0 1 0 1.414-1.414A3 3 0 0 0 5.95 4.05ZM6 11h8a3 3 0 1 1 0 6H6a3 3 0 1 1 0-6Zm1.5 2a1.5 1.5 0 1 0 0 3h5a1.5 1.5 0 0 0 0-3h-5Z" />
+                            </svg>
+                        </div>
+                        <input id="max-personas" name="max-personas" type="number" min="1" max="10"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full md:w-[16vw]"
+                            required placeholder="Máximo de personas">
+                    </div>
+
+                    <span class="text-center md:text-left text-gray-500">Desde</span>
+
+                    <div class="relative w-full md:w-auto">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input id="fechaStart" name="start" type="date"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            required placeholder="Seleccione fecha de inicio de su reserva">
+                    </div>
+
+                    <span class="text-center md:text-left text-gray-500">Hasta</span>
+
+                    <div class="relative w-full md:w-auto">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input id="fechaEnd" name="end" type="date"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            required>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="bg-orange-500 hover:bg-orange-600 text-white text-[13px] p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-3 sm:mt-0 md:ml-3">
+                            Consultar Disponibilidad
+                        </button>
+                    </div>
+
+                </div>
+
+
+            </form>
+
+            <div id="letrero">
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-4 mt-8 text-center">Habitaciones</h2>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="contenedor_habitaciones" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:gap-8">
+    </div>
+    </div>
+    </div>
+
+
+
+    <div id="contenedor_modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+        <div id="modal_inicioSesion"
+            class="hidden bg-white w-11/12 h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 list-none rounded sm:h-[78vh] sm:w-[40vw] sm:justify-center sm:flex">
+            <section class="bg-gradient-to-b from-gray-100 to-red-50 w-full rounded shadow-xl">
+                <div class="flex flex-col items-center justify-center px-9 py-8 mx-auto sm:h-full sm:w-full lg:py-0">
+                    <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-black dark:text-black">
+                        <img class="w-8 h-8 mr-2" src="../img/landing/logo.png" alt="logo">
+                        Hotel El Rincon De Camila
+                    </a>
+                    <div
+                        class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white dark:shadow-xl">
+                        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 ">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <h1
+                                class="text-xl font-bold leading-tight tracking-tight text-black md:text-2xl dark:text-black">
+                                Inicia sesión en tu cuenta
+                            </h1>
+                            <form id="formulario" class="space-y-4 md:space-y-6">
+                                <div>
+                                    <label for="email"
+                                        class="block mb-2 text-sm font-medium text-black dark:text-black">Tu
+                                        email</label>
+                                        <input 
+                                        type="email" 
+                                        name="email" 
+                                        id="email" 
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 shadow-xl focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                        placeholder="name@company.com" 
+                                        autocomplete="username" 
+                                        required>
+                                </div>
+                                <div>
+                                    <label for="password"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Password</label>
+                                        <input 
+                                        type="password" 
+                                        name="password" 
+                                        id="contrasena" 
+                                        placeholder="••••••••" 
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 shadow-xl dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                        autocomplete="current-password" 
+                                        required>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <a href="#"
+                                        class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Olvidaste
+                                        tu contraseña?</a>
+                                </div>
+                                <button type="submit"
+                                    class="w-full text-white bg-gray-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-black dark:focus:ring-primary-800">Iniciar
+                                    Sesión</button>
+                                <p class="text-sm font-light text-gray-500 dark:text-gray-700">
+                                    No tienes cuenta aún? <a id="registro"
+                                        class="font-medium text-primary-600 hover:underline dark:text-primary-500 cursor-pointer">Registrate</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="contenedor_modal2" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+        <div id="modal_Registrate"
+            class="hidden bg-white w-11/12 h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 list-none rounded sm:h-[78vh] sm:w-[40vw] sm:justify-center sm:flex">
+            <section class="bg-gradient-to-b from-gray-100 to-red-50 w-full rounded shadow-xl">
+                <div class="flex flex-col items-center justify-center px-9 py-8 mx-auto sm:h-full sm:w-full lg:py-0">
+                    <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-black dark:text-black">
+                        <img class="w-8 h-8 mr-2" src="../img/landing/logo.png" alt="logo">
+                        Hotel El Rincon De Camila
+                    </a>
+                    <div
+                        class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white dark:shadow-xl">
+                        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 ">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <h1
+                                class="text-xl font-bold leading-tight tracking-tight text-black md:text-2xl dark:text-black">
+                                Registrate
+                            </h1>
+                            <form id="formulario2" class="space-y-4 md:space-y-6">
+                                <div>
+                                    <label for="text"
+                                        class="block mb-2 text-sm font-medium text-black dark:text-black">Ingresa tu
+                                        nombre</label>
+                                    <input type="text" name="text" id="name"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600
+                                        shadow-xl focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Pepito Peréz" required="">
+                                </div>
+                                <div>
+                                    <label for="email"
+                                        class="block mb-2 text-sm font-medium text-black dark:text-black">Ingresa tu
+                                        email</label>
+                                    <input type="email" name="email" id="email_registro"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600
+                                        shadow-xl focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="name@company.com" required="">
+                                </div>
+                                <div>
+                                    <label for="password"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Password</label>
+                                    <input type="password" name="password" id="contrasena_registro"
+                                        placeholder="••••••••"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 shadow-xl dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        required="">
+                                </div>
+                                <button type="submit"
+                                    class="w-full text-white bg-gray-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-black dark:focus:ring-primary-800">Registrate</button>
+                                <p class="text-sm font-light text-gray-500 dark:text-gray-700">
+                                    Ya tienes cuenta? <a id="iniciar"
+                                        class="font-medium text-primary-600 hover:underline dark:text-primary-500 cursor-pointer">Inicia
+                                        sesión</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal de reserva -->
+    <div id="modalReserva"
+        class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div class="modal-content bg-white rounded-lg w-11/12 sm:w-96 p-6 relative">
+            <!-- Botón de cerrar -->
+            <span id="closeModal"
+                class="close-btn absolute top-2 right-2 text-xl font-bold text-gray-500 cursor-pointer">&times;</span>
+
+            <!-- Títulos y contenido de la habitación -->
+            <h2 id="habitacionNombre" class="text-2xl font-semibold text-gray-800 mb-4"></h2>
+            <p id="habitacionDescripcion" class="text-gray-600 mb-3"></p>
+            <p id="habitacionWifi" class="text-orange-500 text-sm mb-2"></p>
+            <p id="habitacionMaxPersonas" class="text-orange-500 text-sm mb-2"></p>
+            <p id="habitacionDisponible" class="text-orange-500 text-sm mb-2"></p>
+            <p id="habitacionPrecio" class="text-green-500 text-lg font-semibold mb-4"></p>
+            <p id="id" class="hidden text-green-500 text-lg font-semibold mb-4"></p>
+            <p id="imagen" class="hidden text-green-500 text-lg font-semibold mb-4"></p>
+            <p id="userReserva" class="hidden text-green-500 text-lg font-semibold mb-4"></p>
+
+            <!-- Formulario de reserva -->
+            <form id="formReserva" class="space-y-4">
+                <div>
+                    <label for="fechaStartReserva" class="block text-gray-700">Fecha de inicio:</label>
+                    <input type="date" id="fechaStartReserva" class="w-full border border-gray-300 p-2 rounded-md" required>
+                </div>
+                <div>
+                    <label for="fechaEndReserva" class="block text-gray-700">Fecha de finalización:</label>
+                    <input type="date" id="fechaEndReserva" class="w-full border border-gray-300 p-2 rounded-md" required>
+                </div>
+                <button type="submit"
+                    class="w-full py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600">Confirmar
+                    Reserva</button>
+            </form>
+        </div>
+    </div>
+
+    <a href="https://wa.me/3012787447?text=Mi%20Proyecto%20JavaScript
+    " target="_blank"
+       class="fixed bottom-5 left-5 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <footer class="bg-white shadow dark:bg-gray-800 text-center">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/"
+                    class="hover:underline">Hotel El Rincon De Camila™</a>. All Rights Reserved.
+            </span>
+            <ul
+                class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 justify-center">
+                <li>
+                    <a href="../pages/contactanos.html" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="../pages/contactanos.html" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script type="module" src="../js/habitaciones.js"></script>
+</body>
+
+
+</html>

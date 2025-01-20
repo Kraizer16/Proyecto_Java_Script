@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelElRinconDeCamila</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/landingPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body id="b"
+    class="box-sizing border-box antialiased min-h-screen flex flex-col bg-gradient-to-b from-gray-100 to-red-50">
+    <header class="relative bg-white shadow-xl ring-1 ring-gray-900/5 z-50 w-full">
+        <nav class="px-4 py-4 sm:flex sm:items-center sm:justify-between">
+            <section class="flex justify-between">
+                <a href="../index.html">
+                    <img src="../img/landing/logo.png" class="h-20" alt="" />
+                </a>
+                <!-- Botón del menú -->
+                <button id="menu-button" class="text-gray-700 sm:hidden focus:outline-none">
+                    <!-- Ícono de tres barras -->
+                    <svg id="hamburger-icon" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 50 50">
+                        <path
+                            d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z">
+                        </path>
+                    </svg>
+                    <!-- Ícono de X -->
+                    <svg id="close-icon" class="w-6 h-6 fill-current hidden" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </section>
+            <div class="flex flex-col hidden items-start mt-3 gap-2 opacity-0 transition-all duration-1000 ease-in-out sm:flex-row sm:opacity-100 sm:block sm:max-h-full"
+                id="menu">
+                <a href="./index.html"
+                    class="text-gray-600 hover:bg-gray-200 px-2 py-2 rounded hover:text-gray-900">Home</a>
+                <a href="./pages/habitaciones.html"
+                    class="text-gray-600 hover:bg-gray-200 px-2 py-2 rounded hover:text-gray-900">Habitaciones</a>
+                <a href="./pages/contactanos.html"
+                    class="text-gray-600 hover:bg-gray-200 px-2 py-2 rounded hover:text-gray-900">Nosotros</a>
+                <button id="btn-iniciar"
+                    class="text-gray-600 bg-green-300 hover:bg-green-600 px-2 py-2 rounded hover:text-gray-900">Iniciar
+                    Sesión</button>
+                <button id="btn-cerrar"
+                    class="hidden text-gray-600 bg-red-300 hover:bg-red-600 px-2 py-2 rounded hover:text-gray-900">Cerrar
+                    Sesión</button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="flex-grow">
+        <!-- Carrusel -->
+        <section>
+            <div class="relative mt-1">
+                <ul id="slider">
+                    <li class="relative w-full h-80 sm:h-[75vh]">
+                        <img class="h-full w-full object-cover " src="./img/landing/habitaciones.jpeg"
+                            alt="habitaciones">
+                        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                        <div class="absolute top-20 left-0 h-full w-full flex">
+                            <h2
+                                class="font-bold text-white my-auto w-full text-center px-20 text-container sm:leading-loose">
+                                <span id="" class="text-lg underline decoration-offset-4 sm:text-5xl">Bienvenidos
+                                    a</span> <br>
+                                <span class="text-xl sm:text-7xl">Hotel <br> El Rincon De Camila</span>
+                            </h2>
+                        </div>
+                    </li>
+                    <li class="relative h-80 w-full hidden sm:h-[75vh]">
+                        <img class="h-full w-full object-cover sm:object-center" src="./img/landing/spa.jpeg" alt="spa">
+                        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                        <div class="absolute top-8 left-0 h-full w-full flex">
+                            <h2
+                                class="font-bold text-white my-auto w-full text-left px-20 text-container leading-relaxed sm:leading-loose">
+                                <span class="text-4xl sm:text-9xl">Disfruta</span> <br>
+                                <span class="text-xl sm:text-5xl"> Spa Master <br></span><span
+                                    class="text-xs sm:text-xl">Sin salir de tu
+                                    habitacion</span>
+                            </h2>
+                        </div>
+                    </li>
+                    <li class="h-80 w-full relative hidden sm:h-[75vh]">
+                        <img class="h-full w-full object-cover sm:object-center" src="./img/landing/piscina.jpeg"
+                            alt="piscina">
+                        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                        <div class="absolute top-5 left-0 h-full w-full flex">
+                            <h2
+                                class="font-bold text-white my-auto w-full text-right px-20 text-container leading-relaxed sm:leading-loose">
+                                <span class="text-xl sm:text-8xl">Sumergete en el lujo</span> <br>
+                                <span class="text-lg sm:text-5xl"> Elije la tuya <br></span><span
+                                    class="text-xs sm:text-2xl">Y haz que cada
+                                    instante cuente</span>
+                            </h2>
+                        </div>
+                    </li>
+                    <li class="h-80 w-full relative hidden sm:h-[75vh]">
+                        <img class="h-full w-full object-cover sm:object-center" src="./img/landing/restaurantes.jpeg"
+                            alt="piscina">
+                        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                        <div class="absolute top-0 left-0 h-full w-full flex">
+                            <h2
+                                class="font-bold text-white my-auto w-full text-right px-20 text-container leading-relaxed sm:leading-loose">
+                                <span class="text-xl sm:text-8xl">Perfecto Lugar</span> <br>
+                                <span class="text-lg sm:text-5xl"> Para una cena agradable<br></span><span
+                                    class="text-xs sm:text-2xl">Chef´s
+                                    altamente calificados</span>
+                            </h2>
+                        </div>
+                    </li>
+                </ul>
+                <div class="absolute px-5 flex h-full w-full top-0 left-0">
+                    <div class="my-auto w-full flex justify-between">
+                        <button id="atras" class="bg-white p-3 rounded-full bg-opacity-40 shadow-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                            </svg>
+                        </button>
+                        <button id="adelante" class="bg-white p-3 rounded-full bg-opacity-40 shadow-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-28">
+            <div class="relative">
+                <div class="text-center font-bold text-4xl p-4">
+                    <h2>Hotel Camila's Rooms</h2>
+                    <a href="./pages/habitaciones.html"
+                        class="font-medium text-2xl text-blue-600 dark:text-blue-500 hover:underline">
+                        View All Rooms →
+                    </a>
+                </div>
+
+                <!-- Contenedor para pantallas pequeñas -->
+                <ul id="containerSlider" class="sm:hidden">
+                    <li
+                        class="h-64 w-full relative rounded transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                        <img class="h-full w-full object-cover p-5 rounded" src="./img/sencillas/sencilla.aspx"
+                            alt="habitaciones">
+                        <div class=" h-full w-full flex">
+                            <h2 class="font-bold w-full text-black text-container pl-5">
+                                <span id="" class="text-lg underline decoration-offset-4">Habitacion Single - 1 Cama
+                                    Sencilla</span> <br>
+                                <span class="text-sm">Mas detalles</span>
+                            </h2>
+                        </div>
+                    </li>
+                    <li
+                        class="h-64 w-full relative rounded hidden transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                        <img class="h-full w-full object-cover p-5 rounded" src="./img/dobles/doble.jpeg"
+                            alt="habitaciones">
+                        <div class=" h-full w-full flex">
+                            <h2 class="font-bold w-full text-black text-container pl-5">
+                                <span id="" class="text-lg underline decoration-offset-4">Habitacion double - 2 Camas
+                                    Sencillas</span> <br>
+                                <span class="text-sm">Mas detalles</span>
+                            </h2>
+                        </div>
+                    </li>
+                    <li
+                        class="h-64 w-full relative rounded hidden transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                        <img class="h-full w-full object-cover p-5 rounded" src="./img/king/king.jpeg"
+                            alt="habitaciones">
+                        <div class=" h-full w-full flex">
+                            <h2 class="font-bold w-full text-black text-container pl-5">
+                                <span id="" class="text-lg underline decoration-offset-4">Habitacion Master - 1 Cama
+                                    King
+                                </span> <br>
+                                <span class="text-sm">Mas detalles</span>
+                            </h2>
+                        </div>
+                    </li>
+                    <li
+                        class="h-64 w-full relative rounded hidden transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                        <img class="h-full w-full object-cover p-5 rounded" src="./img/people/familiar.jpeg"
+                            alt="habitaciones">
+                        <div class=" h-full w-full flex">
+                            <h2 class="font-bold w-full text-black text-container pl-5">
+                                <span id="" class="text-lg underline decoration-offset-4">Habitacion People - 2
+                                    Camarotes/dobles</span> <br>
+                                <span class="text-sm">Mas detalles</span>
+                            </h2>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Contenedor para pantallas medianas y superiores -->
+                <div class="hidden sm:grid sm:grid-cols-3 sm:gap-4">
+                    <div
+                        class="relative transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                        <img class="h-64 w-full object-cover rounded" src="./img/sencillas/sencilla.aspx"
+                            alt="habitaciones">
+                        <h2 class="text-center mt-2 font-bold text-lg">Habitación Single - 1 Cama Sencilla</h2>
+                        <p class="text-center text-sm text-blue-600 hover:underline">Más detalles →</p>
+                    </div>
+                    <div
+                        class="relative transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                        <img class="h-64 w-full object-cover rounded" src="./img/dobles/doble.jpeg" alt="habitaciones">
+                        <h2 class="text-center mt-2 font-bold text-lg">Habitación Double - 2 Camas Sencillas</h2>
+                        <p class="text-center text-sm text-blue-600 hover:underline">Más detalles →</p>
+                    </div>
+                    <div
+                        class="relative transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                        <img class="h-64 w-full object-cover rounded" src="./img/king/king.jpeg" alt="habitaciones">
+                        <h2 class="text-center mt-2 font-bold text-lg">Habitación Master - 1 Cama King</h2>
+                        <p class="text-center text-sm text-blue-600 hover:underline">Más detalles →</p>
+                    </div>
+                </div>
+        </section>
+
+        <section class="mt-24">
+            <div class="relative sm:grid sm:grid-cols-3 sm:gap-6 sm:px-5">
+                <!-- Galería -->
+                <div>
+                    <div class="text-left font-bold text-2xl p-5">
+                        <h2>Galería</h2>
+                        <h1>_____</h1>
+                    </div>
+                    <ul id="Galeria" class="sm:grid sm:grid-cols-3 sm:gap-4 ">
+                        <li
+                            class="h-96 w-full relative rounded sm:h-20 transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 hidden">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <img class="h-full w-full object-cover px-5 rounded mb-9 sm:my-2"
+                                src="./img/landing/piscina1.jpeg" alt="piscina1">
+                        </li>
+                        <li
+                            class="h-96 w-full relative rounded sm:h-20 transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 hidden">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <img class="h-full w-full object-cover px-5 rounded my-9 sm:my-2"
+                                src="./img/landing/piscina2.jpeg" alt="piscina2">
+                        </li>
+                        <li
+                            class="h-96 w-full relative rounded sm:h-20 transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 hidden">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <img class="h-full w-full object-cover px-5 rounded my-9 sm:my-2"
+                                src="./img/landing/piscina3.jpeg" alt="piscina3">
+                        </li>
+                        <li
+                            class="h-96 w-full relative rounded sm:h-20 transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 hidden">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <img class="h-full w-full object-cover px-5 rounded my-9 sm:my-2"
+                                src="./img/sencillas/sencilla.aspx" alt="piscina3">
+                        </li>
+                        <li
+                            class="h-96 w-full relative rounded sm:h-20 transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 hidden">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <img class="h-full w-full object-cover px-5 rounded my-9 sm:my-2"
+                                src="./img/dobles/doble.jpeg" alt="piscina3">
+                        </li>
+                        <li
+                            class="h-96 w-full relative rounded sm:h-20 transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 hidden">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <img class="h-full w-full object-cover px-5 rounded my-9 sm:my-2"
+                                src="./img/people/familiar.jpeg" alt="piscina3">
+                        </li>
+                        <li
+                            class="h-96 w-full relative rounded sm:h-20 transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 hidden ">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <img class="h-full w-full object-cover px-5 rounded my-9 sm:my-2" src="./img/king/king.jpeg"
+                                alt="piscina3">
+                        </li>
+                        <li
+                            class="h-96 w-full relative rounded sm:h-20 transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 hidden">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <img class="h-full w-full object-cover px-5 rounded my-9 sm:my-2"
+                                src="./img/landing/restaurantes.jpeg" alt="piscina3">
+                        </li>
+                        <li
+                            class="h-96 w-full relative rounded sm:h-20 transform transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+                            <button
+                                class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 hidden">
+                                <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <img class="h-full w-full object-cover px-5 rounded my-9 sm:my-2"
+                                src="./img/landing/restaurantes1.jpeg" alt="piscina3">
+                        </li>
+                    </ul>
+                    <div id="contenedor_modales" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+                        <div id="modal_galeria"
+                            class="hidden bg-white w-11/12 h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 list-none rounded sm:h-[50vh] sm:w-[30vw]">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Tour -->
+                <div>
+                    <div class="text-left font-bold text-2xl p-5">
+                        <h2>Video Tour <br> _____</h2>
+                    </div>
+                    <div class="h-72 w-full relative rounded">
+                        <video src="./videos/videoTour.mp4" class="h-full w-full object-cover px-5 rounded mb-4 py-1"
+                            controls>
+                            <source type="video/mp4" alt="VideoTour">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="text-left px-5 mt-12 sm:text-xs sm:justify-center sm:mt-9">
+                    <p class="text-lg text-center font-bold mb-2">🌟¡Vive una experiencia inolvidable🌟<br>🌟en nuestro
+                        maravilloso hotel!🌟</p>
+                    <p class="text-sm mb-6 mt-6 font-bold">Aquí Encontrarás:</p>
+                    <ul class="text-sm text-gray-800 font-bold">
+                        <li class="mb-4">✨ Zonas húmedas diseñadas para tu relajación total.</li>
+                        <li class="mb-4">💆‍♀️ Spa’s de clase mundial para renovar cuerpo y mente.</li>
+                        <li class="mb-4">🍽️ Restaurantes excepcionales con deliciosas opciones.</li>
+                        <li class="mb-6">🎉 ¡Y toda la diversión para desconectarte y disfrutar.</li>
+                    </ul>
+                    <p class="text-center text-sm font-bold mb-4">Reserva y transforma tus días en una experiencia
+                        única.🏖️
+                        ¡Te esperamos!</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="contenedor_modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+            <div id="modal_inicioSesion"
+                class="hidden bg-white w-11/12 h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 list-none rounded sm:h-[78vh] sm:w-[40vw] sm:justify-center sm:flex">
+                <section class="bg-gradient-to-b from-gray-100 to-red-50 w-full rounded shadow-xl">
+                    <div
+                        class="flex flex-col items-center justify-center px-9 py-8 mx-auto sm:h-full sm:w-full lg:py-0">
+                        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-black dark:text-black">
+                            <img class="w-8 h-8 mr-2" src="../img/landing/logo.png" alt="logo">
+                            Hotel El Rincon De Camila
+                        </a>
+                        <div
+                            class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white dark:shadow-xl">
+                            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                                <button
+                                    class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 ">
+                                    <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24">
+                                        <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <h1
+                                    class="text-xl font-bold leading-tight tracking-tight text-black md:text-2xl dark:text-black">
+                                    Inicia sesión en tu cuenta
+                                </h1>
+                                <form id="formulario" class="space-y-4 md:space-y-6">
+                                    <div>
+                                        <label for="email"
+                                            class="block mb-2 text-sm font-medium text-black dark:text-black">Tu
+                                            email</label>
+                                        <input type="email" name="email" id="email"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600
+                                            shadow-xl focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="name@company.com" required="">
+                                    </div>
+                                    <div>
+                                        <label for="password"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Password</label>
+                                        <input type="password" name="password" id="contrasena" placeholder="••••••••"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 shadow-xl dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required="">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <a href="#"
+                                            class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Olvidaste
+                                            tu contraseña?</a>
+                                    </div>
+                                    <button type="submit"
+                                        class="w-full text-white bg-gray-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-black dark:focus:ring-primary-800">Iniciar
+                                        Sesión</button>
+                                    <p class="text-sm font-light text-gray-500 dark:text-gray-700">
+                                        No tienes cuenta aún? <a id="registro"
+                                            class="font-medium text-primary-600 hover:underline dark:text-primary-500 cursor-pointer">Registrate</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="contenedor_modal2" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+            <div id="modal_Registrate"
+                class="hidden bg-white w-11/12 h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 list-none rounded sm:h-[78vh] sm:w-[40vw] sm:justify-center sm:flex">
+                <section class="bg-gradient-to-b from-gray-100 to-red-50 w-full rounded shadow-xl">
+                    <div
+                        class="flex flex-col items-center justify-center px-9 py-8 mx-auto sm:h-full sm:w-full lg:py-0">
+                        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-black dark:text-black">
+                            <img class="w-8 h-8 mr-2" src="../img/landing/logo.png" alt="logo">
+                            Hotel El Rincon De Camila
+                        </a>
+                        <div
+                            class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white dark:shadow-xl">
+                            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                                <button
+                                    class="botonsito p-1 rounded-full bg-opacity-80 absolute z-50 top-0 right-0 bg-gray-200 ">
+                                    <svg id="" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24">
+                                        <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <h1
+                                    class="text-xl font-bold leading-tight tracking-tight text-black md:text-2xl dark:text-black">
+                                    Registrate
+                                </h1>
+                                <form id="formulario2" class="space-y-4 md:space-y-6">
+                                    <div>
+                                        <label for="text"
+                                            class="block mb-2 text-sm font-medium text-black dark:text-black">Ingresa tu
+                                            nombre</label>
+                                        <input type="text" name="text" id="name"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600
+                                            shadow-xl focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Pepito Peréz" required="">
+                                    </div>
+                                    <div>
+                                        <label for="email"
+                                            class="block mb-2 text-sm font-medium text-black dark:text-black">Ingresa tu
+                                            email</label>
+                                        <input type="email" name="email" id="email_registro"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600
+                                            shadow-xl focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="name@company.com" required="">
+                                    </div>
+                                    <div>
+                                        <label for="password"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Password</label>
+                                        <input type="password" name="password" id="contrasena_registro"
+                                            placeholder="••••••••"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 shadow-xl dark:placeholder-gray-800 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required="">
+                                    </div>
+                                    <button type="submit"
+                                        class="w-full text-white bg-gray-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-black dark:focus:ring-primary-800">Registrate</button>
+                                    <p class="text-sm font-light text-gray-500 dark:text-gray-700">
+                                        Ya tienes cuenta? <a id="iniciar"
+                                            class="font-medium text-primary-600 hover:underline dark:text-primary-500 cursor-pointer">Inicia
+                                            sesión</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </main>
+
+    <a href="https://wa.me/3012787447?text=Mi%20Proyecto%20JavaScript
+    " target="_blank"
+       class="fixed bottom-5 left-5 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <footer class="bg-white shadow dark:bg-gray-800 text-center mt-12">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/"
+                    class="hover:underline">Hotel El Rincon De Camila™</a>. All Rights Reserved.
+            </span>
+            <ul
+                class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 justify-center">
+                <li>
+                    <a href="../pages/contactanos.html" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="../pages/contactanos.html" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/landingPage.js"></script>
+</body>
+
+
+
+</html>

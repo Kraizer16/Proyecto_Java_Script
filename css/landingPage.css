@@ -1,0 +1,33 @@
+/* Transiciones suaves para las imágenes */
+#slider li {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out; /* Duración y tipo de transición */
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translate3d(100%);
+}
+
+#slider li.hidden {
+    display: none; /* Oculta completamente el elemento cuando no está activo */
+}
+
+#slider li.active {
+    opacity: 1;
+    display: block;
+    
+}
+
+/* Transiciones para el texto */
+#slider li .text-container {
+    opacity: 0;
+    transform: translateY(20px); /* Empuja el texto hacia abajo inicialmente */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#slider li.active .text-container {
+    opacity: 1;
+    transform: translateY(0); /* Regresa el texto a su posición original */
+}
+
+
