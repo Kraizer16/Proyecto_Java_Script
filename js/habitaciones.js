@@ -59,7 +59,7 @@ if (window.location.pathname.includes("habitaciones.html")) {
     menu();
 }
 function mostrarHabitaciones() {
-    fetch('http://localhost:3000/habitaciones')
+    fetch('https://apiproject-1c5o.onrender.com/habitaciones')
         .then(response => response.json())
         .then(data => {
             dibujarHabitaciones(data);
@@ -122,7 +122,7 @@ function mostrarDisponibilidad() {
 
         try {
             // Realizar la solicitud para obtener las habitaciones
-            const response = await fetch("http://localhost:3000/habitaciones");
+            const response = await fetch("https://apiproject-1c5o.onrender.com/habitaciones");
             if (!response.ok) {
                 throw new Error("Error al obtener las habitaciones");
             }
@@ -254,7 +254,7 @@ export default function setupReservaModal() {
                         };
 
                         // Realizar la solicitud PUT para actualizar la habitación
-                        fetch(`http://localhost:3000/habitaciones/${id}`, {
+                        fetch(`https://apiproject-1c5o.onrender.com/habitaciones/${id}`, {
                             method: "PUT",
                             headers: {
                                 "Content-Type": "application/json"
@@ -323,7 +323,7 @@ export default function setupReservaModal() {
                 }
                 // Lógica para cancelar la reserva
                 console.log(`Cancelando reserva de la habitación: ${habitacion.nombre}`);
-                fetch(`http://localhost:3000/habitaciones/${habitacion.id}`, {
+                fetch(`https://apiproject-1c5o.onrender.com/habitaciones/${habitacion.id}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json"

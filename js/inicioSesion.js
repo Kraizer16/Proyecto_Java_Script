@@ -109,7 +109,7 @@ export function inicioSesionModals() {
     
             try {
                 // Cargar los datos del JSON (puedes usar una ruta relativa o API)
-                const response = await fetch("http://localhost:3000/users"); // Cambia por la URL de tu archivo JSON
+                const response = await fetch("https://apiproject-1c5o.onrender.com/users"); // Cambia por la URL de tu archivo JSON
                 const usuarios = await response.json();
     
                 // Buscar si el usuario y la contraseña coinciden
@@ -137,7 +137,7 @@ export function inicioSesionModals() {
     }
 
     async function post (datos) {
-        const respuesta = await fetch('http://localhost:3000/users', {
+        const respuesta = await fetch('https://apiproject-1c5o.onrender.com/users', {
             method: 'POST',
             headers: { "content-type": "application/json" },
             body: JSON.stringify(datos),
