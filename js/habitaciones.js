@@ -50,6 +50,14 @@ function dibujarHabitaciones(habitaciones) {
 }
 
 // Código para cargar habitaciones
+
+if (window.location.pathname.includes("habitaciones.html")) {
+
+    mostrarDisponibilidad()
+    mostrarHabitaciones();
+    reservas()
+    menu();
+}
 function mostrarHabitaciones() {
     fetch('http://localhost:3000/habitaciones')
         .then(response => response.json())
@@ -265,7 +273,7 @@ export default function setupReservaModal() {
                             });
                     });
 
-                } else{
+                } else {
 
                     btn.textContent = "No disponible"
 
@@ -345,8 +353,5 @@ export default function setupReservaModal() {
 
 
 
-mostrarDisponibilidad()
-mostrarHabitaciones();
-reservas()
-menu();
+
 
