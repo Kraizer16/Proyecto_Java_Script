@@ -1,4 +1,4 @@
-import asd from "../js/habitaciones.js"
+import setupModal from "../js/habitaciones.js"
 export function inicioSesionModals() {
     const cerrar = document.getElementById('btn-cerrar');
     const iniciar = document.getElementById('btn-iniciar');
@@ -41,7 +41,7 @@ export function inicioSesionModals() {
     function setupSignInModal() {
         const usuario1 = sessionStorage.getItem('usuario_activo'); // Verificar si hay una sesión activa
         if (usuario1) {
-            asd();
+            setupModal();
         } else {
             for (const btn of btns_Reservar) {
                 btn.addEventListener("click", () => {
@@ -65,7 +65,7 @@ export function inicioSesionModals() {
             cuerpo.classList.add('overflow-y-hidden');
             contenedor2.addEventListener('click', (event) => {
                 if (!modal2.contains(event.target)) {
-                    closeGalleryModal();
+                    closeModal();
                 }
             });
         })
@@ -73,7 +73,7 @@ export function inicioSesionModals() {
 
     function signnnn() {
         btn_iniciar.addEventListener("click", () => {
-            closeGalleryModal(); // Cerrar cualquier modal abierto
+            closeModal(); // Cerrar cualquier modal abierto
             handleReserveButtonClick(); // Abrir el modal de inicio de sesión
         });
     }
@@ -84,13 +84,13 @@ export function inicioSesionModals() {
         cuerpo.classList.add('overflow-y-hidden');
         contenedor.addEventListener('click', (event) => {
             if (!modal.contains(event.target)) {
-                closeGalleryModal();
+                closeModal();
             }
         });
         setupUserInterface();
     }
 
-    function closeGalleryModal() {
+    function closeModal() {
         modal.classList.add('hidden');
         contenedor.classList.add('hidden');
         cuerpo.classList.remove('overflow-y-hidden');
@@ -122,7 +122,7 @@ export function inicioSesionModals() {
     
                     alert("Inicio de sesión exitoso.");
                     setupUserInterface(); // Actualizar la interfaz del usuario
-                    closeGalleryModal();  // Cerrar el modal de inicio de sesión
+                    closeModal();  // Cerrar el modal de inicio de sesión
                     location.reload()
                 } else {
                     // Si no coinciden, mostrar un mensaje de error
@@ -160,6 +160,7 @@ export function inicioSesionModals() {
             }
 
             post(data)
+            location.reload()
         })
 
     }

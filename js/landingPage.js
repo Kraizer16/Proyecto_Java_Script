@@ -108,7 +108,7 @@ function modales_galeria() {
                 clonedBton.classList.remove('hidden');
                 cuerpo.classList.add('overflow-y-hidden');
 
-
+                    
                 // Clonar el elemento li y modificar las clases del li
                 elementCloned.classList.remove('h-96');
                 elementCloned.classList.add('m-0', 'p-2', "h-64");
@@ -123,6 +123,7 @@ function modales_galeria() {
 
                 // Cerrar el modal al hacer clic fuera de la imagen o en el botón de cierre
                 contenedor.addEventListener('click', (e) => {
+                    
                     // Verificar si el clic fue dentro del botón de cierre o fuera del modal
                     if (e.target.closest('button') === clonedBton || !modal.contains(e.target)) {
                         modal.classList.add('hidden');

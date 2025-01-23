@@ -76,7 +76,7 @@ function reservas() {
     const fechaEndReserva = document.getElementById("fechaEndReserva");
 
     if (!fechaStart || !fechaEnd) {
-        // Si no existen los elementos, salir de la función
+
         console.warn("Algunos elementos necesarios para 'reservas' no están presentes.");
         return;
     }
